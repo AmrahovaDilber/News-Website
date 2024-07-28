@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#F4F9F8] flex min-h-screen">
+    <!-- Sidebar -->
+    <aside
+      class="fixed top-0 left-0 w-[260px] h-screen overflow-y-auto flex flex-col"
+    >
+      <div class="flex-grow pt-6 flex flex-col justify-between pr-[17px]">
+        <div>
+          <div class="flex space-x-5 items-center pl-8">
+            <figure class="w-7 h-9">
+              <img
+                src="./assets/images/news.svg"
+                class="object-cover"
+                alt="Logo"
+              />
+            </figure>
+            <h1 class="text-lg font-bold text-[#0768B5]">Aster News</h1>
+          </div>
+          <nav class="mt-6">
+            <ul id="categoriesContainer">
+              <!-- <li class="flex items-center space-x-5 mb-6 relative bg-[#E1F1F9] py-[14px] rounded-r-full">
+               
+                      <div class="absolute left-[15px] w-2 h-2 rounded-full bg-[#2F9FF8]"></div>
+                      <div class="flex items-center space-x-3 pl-3">
+                          <div class="w-6 h-6">
+                              <img class="object-cover" src="./assets/images/home.svg" alt="Home" />
+                          </div>
+                          <a href="#" class="font-bold text-[15px] text-[#2F9FF8]">Top Stories</a>
+                      </div>
+                  </li>
+               -->
+            </ul>
+          </nav>
+        </div>
+
+        <div class="mb-8 pl-8 mt-[120px]">
+          <div class="bg-[#2f9ff8] rounded-md w-full p-4">
+            <div class="flex items-center space-x-4 mb-3">
+              <figure class="w-6 h-6">
+                <img
+                  src="./assets/images/gift.svg"
+                  class="object-cover text-white"
+                  alt="Bell"
+                />
+              </figure>
+              <p class="font-normal text-sm text-white">Subscribe to Premium</p>
+            </div>
+            <div class="flex justify-between items-center">
+              <p class="text-white">
+                <span class="font-bold text-[25px] text-white">$8</span>/m
+              </p>
+              <button
+                class="py-2 px-4 bg-[#0768B5] text-white w-[110px] text-center rounded-md"
+              >
+                Upgrade
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Middle Content -->
+    <div class="ml-[315px] pt-[15px] pr-[34px] overflow-y-auto flex-1">
+      <!-- Header -->
+      <header class="flex flex-wrap justify-between items-center">
+        <div class="flex items-center space-x-[20px] flex-wrap">
+          <div
+            class="flex items-center space-x-2 w-[513px] bg-[#ECF5F8] p-[14px] border border-gray-300 rounded"
+          >
+            <input
+              type="text"
+              placeholder="Search for news..."
+              class="flex-1 outline-none bg-transparent font-normal text-[15px]"
+            />
+            <div class="size-[18px]">
+              <img src="./assets/images/search.svg" class="object-cover" />
+            </div>
+          </div>
+          <div
+            class="w-[256px] flex items-center justify-between border border-[#072D4B] p-[14px]"
+          >
+            <p class="font-normal text-[15px]">
+              Latest news on
+              <span class="font-semibold text-[#2f9ff8]">Covid-19</span>
+              <figure class="size-[20px]">
+                <img
+                  class="object-cover"
+                  src="./assets/images/arrow-right.svg"
+                />
+              </figure>
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center w-[156px] justify-between mt-4 lg:mt-0">
+          <div class="flex items-center space-x-[23px]">
+            <figure class="size-[24px]">
+              <img
+                src="./assets/images/user.svg"
+                alt="Profile"
+                class="object-cover"
+              />
+            </figure>
+            <span class="font-normal text-[15px] text-[#072D4B]">
+              My Profile
+            </span>
+          </div>
+
+          <figure class="w-[16px] h-[8px]">
+            <img
+              src="./assets/images/select.svg"
+              alt="Profile"
+              class="object-cover"
+            />
+          </figure>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <div
+        class="flex flex-col lg:flex-row justify-between space-x-[45px] mt-[20px]"
+      >
+        <div>
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full lg:w-[790px]"
+          >
+            <!-- Card -->
+            <div
+              class="bg-[#FFFFFF] p-4 rounded-[4px] flex flex-col justify-between min-h-[130px]"
+            >
+              <div class="flex space-x-[18px]">
+                <div class="flex flex-col w-[179px]">
+                  <h2 class="text-[17px] font-medium text-[#072D4B] mb-[9px]">
+                    Battlegrounds Mobile India iOS release date
+                  </h2>
+                  <p
+                    class="text-[14px] font-normal text-[#6a8193] w-[179px] h-[60px] overflow-hidden text-ellipsis"
+                  >
+                    The reason behind their disappointment is that iPhone users
+                    have been...
+                  </p>
+                </div>
+                <figure class="aspect-[1/1] rounded-[4px] bg-gray-100">
+                  <!-- Image Placeholder -->
+                  <img
+                    src="./assets/images/hacker.png"
+                    alt="Battlegrounds Mobile India"
+                    class="size-full object-cover rounded-[4px]"
+                  />
+                </figure>
+              </div>
+
+              <div class="flex justify-between items-center mt-4">
+                <p class="font-normal text-[12px] text-[#9cabb7]">Sport Biz</p>
+                <div class="flex items-center space-x-[8px]">
+                  <div class="size-[3px] rounded-full bg-[#acd9fc]"></div>
+                  <p class="font-normal text-[12px] text-[#9cabb7]">
+                    42 mins ago
+                  </p>
+                </div>
+
+                <div class="flex space-x-[8px] items-center">
+                  <figure class="size-[16px]">
+                    <img src="./assets/images/share.svg" class="object-cover" />
+                  </figure>
+                  <p class="font-normal text-[12px] text-[#0768b5]">Share</p>
+                </div>
+                <div class="flex space-x-[8px] items-center">
+                  <figure class="size-[16px]">
+                    <img
+                      src="./assets/images/pocket.svg"
+                      class="object-cover"
+                    />
+                  </figure>
+                  <p class="font-normal text-[12px] text-[#0768b5]">
+                    Read Later
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Card -->
+            <div
+              class="bg-[#FFFFFF] p-4 rounded-[4px] flex flex-col justify-between min-h-[130px]"
+            >
+              <div class="flex space-x-[18px]">
+                <div class="flex flex-col w-[179px]">
+                  <h2 class="text-[17px] font-medium text-[#072D4B] mb-[9px]">
+                    Battlegrounds Mobile India iOS release date
+                  </h2>
+                  <p
+                    class="text-[14px] font-normal text-[#6a8193] w-[179px] h-[60px] overflow-hidden text-ellipsis"
+                  >
+                    The reason behind their disappointment is that iPhone users
+                    have been...
+                  </p>
+                </div>
+                <figure class="aspect-[1/1] rounded-[4px] bg-gray-100">
+                  <!-- Image Placeholder -->
+                  <img
+                    src="./assets/images/hacker.png"
+                    alt="Battlegrounds Mobile India"
+                    class="size-full object-cover rounded-[4px]"
+                  />
+                </figure>
+              </div>
+
+              <div class="flex justify-between items-center mt-4">
+                <p class="font-normal text-[12px] text-[#9cabb7]">Sport Biz</p>
+                <div class="flex items-center space-x-[8px]">
+                  <div class="size-[3px] rounded-full bg-[#acd9fc]"></div>
+                  <p class="font-normal text-[12px] text-[#9cabb7]">
+                    42 mins ago
+                  </p>
+                </div>
+
+                <div class="flex space-x-[8px] items-center">
+                  <figure class="size-[16px]">
+                    <img src="./assets/images/share.svg" class="object-cover" />
+                  </figure>
+                  <p class="font-normal text-[12px] text-[#0768b5]">Share</p>
+                </div>
+                <div class="flex space-x-[8px] items-center">
+                  <figure class="size-[16px]">
+                    <img
+                      src="./assets/images/pocket.svg"
+                      class="object-cover"
+                    />
+                  </figure>
+                  <p class="font-normal text-[12px] text-[#0768b5]">
+                    Read Later
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card -->
+            <div
+              class="bg-[#FFFFFF] p-4 rounded-[4px] flex flex-col justify-between min-h-[130px]"
+            >
+              <div class="flex flex-col w-[330px]">
+                <h2 class="text-[17px] font-medium text-[#072D4B] mb-[9px]">
+                  Petrol, diesel prices - July 6: Fuel prices unchanged after
+                  touching record high
+                </h2>
+                <p
+                  class="text-[14px] font-normal text-[#6a8193] w-[330px] h-[60px] overflow-hidden text-ellipsis"
+                >
+                  When US President Joe Biden chose in April to withdraw all
+                  American forces from Afghanistan by September, we were among
+                  those who judged..
+                </p>
+              </div>
+
+              <div class="flex justify-between items-center mt-4">
+                <p class="font-normal text-[12px] text-[#9cabb7]">Sport Biz</p>
+                <div class="flex items-center space-x-[8px]">
+                  <div class="size-[3px] rounded-full bg-[#acd9fc]"></div>
+                  <p class="font-normal text-[12px] text-[#9cabb7]">
+                    42 mins ago
+                  </p>
+                </div>
+
+                <div class="flex space-x-[8px] items-center">
+                  <figure class="size-[16px]">
+                    <img src="./assets/images/share.svg" class="object-cover" />
+                  </figure>
+                  <p class="font-normal text-[12px] text-[#0768b5]">Share</p>
+                </div>
+                <div class="flex space-x-[8px] items-center">
+                  <figure class="size-[16px]">
+                    <img
+                      src="./assets/images/pocket.svg"
+                      class="object-cover"
+                    />
+                  </figure>
+                  <p class="font-normal text-[12px] text-[#0768b5]">
+                    Read Later
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Card -->
+            <div
+              class="bg-[#FFFFFF] p-4 rounded-[4px] flex flex-col justify-between min-h-[130px]"
+            >
+              <div class="flex space-x-[18px]">
+                <div class="flex flex-col w-[179px]">
+                  <h2 class="text-[17px] font-medium text-[#072D4B] mb-[9px]">
+                    Battlegrounds Mobile India iOS release date
+                  </h2>
+                  <p
+                    class="text-[14px] font-normal text-[#6a8193] w-[179px] h-[60px] overflow-hidden text-ellipsis"
+                  >
+                    The reason behind their disappointment is that iPhone users
+                    have been...
+                  </p>
+                </div>
+                <figure class="aspect-[1/1] rounded-[4px] bg-gray-100">
+                  <!-- Image Placeholder -->
+                  <img
+                    src="./assets/images/hacker.png"
+                    alt="Battlegrounds Mobile India"
+                    class="size-full object-cover rounded-[4px]"
+                  />
+                </figure>
+              </div>
+
+              <div class="flex justify-between items-center mt-4">
+                <p class="font-normal text-[12px] text-[#9cabb7]">Sport Biz</p>
+                <div class="flex items-center space-x-[8px]">
+                  <div class="size-[3px] rounded-full bg-[#acd9fc]"></div>
+                  <p class="font-normal text-[12px] text-[#9cabb7]">
+                    42 mins ago
+                  </p>
+                </div>
+
+                <div class="flex space-x-[8px] items-center">
+                  <figure class="size-[16px]">
+                    <img src="./assets/images/share.svg" class="object-cover" />
+                  </figure>
+                  <p class="font-normal text-[12px] text-[#0768b5]">Share</p>
+                </div>
+                <div class="flex space-x-[8px] items-center">
+                  <figure class="size-[16px]">
+                    <img
+                      src="./assets/images/pocket.svg"
+                      class="object-cover"
+                    />
+                  </figure>
+                  <p class="font-normal text-[12px] text-[#0768b5]">
+                    Read Later
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="max-w-[790px] mx-auto mt-[44px]">
+            <div class="flex justify-between items-center mb-[14px]">
+              <div class="flex space-x-[13px]">
+                <figure class="size-[24px]">
+                  <img src="./assets/images/feather.svg" class="object-cover" />
+                </figure>
+                <h2 class="font-bold text-[15px] text-[#072d4b]">
+                  Creators you should follow
+                </h2>
+              </div>
+
+              <div class="flex space-x-[20px]">
+                <button class="cursor-pointer">
+                  <figure class="size-[20px]">
+                    <img
+                      src="./assets/images/leftarrow.svg"
+                      class="object-cover"
+                    />
+                  </figure>
+                </button>
+                <button class="cursor-pointer">
+                  <figure class="size-[20px]">
+                    <img
+                      src="./assets/images/rightarrow.svg"
+                      class="object-cover"
+                    />
+                  </figure>
+                </button>
+              </div>
+            </div>
+            <div
+              id="creators-container"
+              class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+            >
+              <div
+                class="w-[142px] p-[13px] h-[185px] rounded-[4px] bg-[#ffffff] flex justify-center flex-col items-center"
+              >
+                <figure class="size-[70px] rounded-full mb-[7px]">
+                  <img
+                    src="./assets/images/img.jpeg"
+                    class="size-full object-cover rounded-full"
+                  />
+                </figure>
+                <h1 class="text-[14px] font-medium text-[#072d4b] mb-[5px]">
+                  Shan Teylor
+                </h1>
+                <p class="font-normal text-[12px] text-[#9cabb7] mb-[7px]">
+                  Tech Mint
+                </p>
+                <button
+                  class="bg-[#2f9ff8] w-[116px] rounded-[4px] py-[7px] font-normal text-[15px] text-[#ffffff] text-center"
+                >
+                  Follow
+                </button>
+              </div>
+              <div
+                class="w-[142px] p-[13px] h-[185px] rounded-[4px] bg-[#ffffff] flex justify-center flex-col items-center"
+              >
+                <figure class="size-[70px] rounded-full mb-[7px]">
+                  <img
+                    src="./assets/images/img.jpeg"
+                    class="size-full object-cover rounded-full"
+                  />
+                </figure>
+                <h1 class="text-[14px] font-medium text-[#072d4b] mb-[5px]">
+                  Shan Teylor
+                </h1>
+                <p class="font-normal text-[12px] text-[#9cabb7] mb-[7px]">
+                  Tech Mint
+                </p>
+                <button
+                  class="bg-[#2f9ff8] w-[116px] rounded-[4px] py-[7px] font-normal text-[15px] text-[#ffffff] text-center"
+                >
+                  Follow
+                </button>
+              </div>
+
+              <div
+                class="w-[142px] p-[13px] h-[185px] rounded-[4px] bg-[#ffffff] flex justify-center flex-col items-center"
+              >
+                <figure class="size-[70px] rounded-full mb-[7px]">
+                  <img
+                    src="./assets/images/img.jpeg"
+                    class="size-full object-cover rounded-full"
+                  />
+                </figure>
+                <h1 class="text-[14px] font-medium text-[#072d4b] mb-[5px]">
+                  Shan Teylor
+                </h1>
+                <p class="font-normal text-[12px] text-[#9cabb7] mb-[7px]">
+                  Tech Mint
+                </p>
+                <button
+                  class="bg-[#2f9ff8] w-[116px] rounded-[4px] py-[7px] font-normal text-[15px] text-[#ffffff] text-center"
+                >
+                  Follow
+                </button>
+              </div>
+
+              <div
+                class="w-[142px] p-[13px] h-[185px] rounded-[4px] bg-[#ffffff] flex justify-center flex-col items-center"
+              >
+                <figure class="size-[70px] rounded-full mb-[7px]">
+                  <img
+                    src="./assets/images/img.jpeg"
+                    class="size-full object-cover rounded-full"
+                  />
+                </figure>
+                <h1 class="text-[14px] font-medium text-[#072d4b] mb-[5px]">
+                  Shan Teylor
+                </h1>
+                <p class="font-normal text-[12px] text-[#9cabb7] mb-[7px]">
+                  Tech Mint
+                </p>
+                <button
+                  class="bg-[#2f9ff8] w-[116px] rounded-[4px] py-[7px] font-normal text-[15px] text-[#ffffff] text-center"
+                >
+                  Follow
+                </button>
+              </div>
+              <div
+                class="w-[142px] p-[13px] h-[185px] rounded-[4px] bg-[#ffffff] flex justify-center flex-col items-center"
+              >
+                <figure class="size-[70px] rounded-full mb-[7px]">
+                  <img
+                    src="./assets/images/img.jpeg"
+                    class="size-full object-cover rounded-full"
+                  />
+                </figure>
+                <h1 class="text-[14px] font-medium text-[#072d4b] mb-[5px]">
+                  Shan Teylor
+                </h1>
+                <p class="font-normal text-[12px] text-[#9cabb7] mb-[7px]">
+                  Tech Mint
+                </p>
+                <button
+                  class="bg-[#2f9ff8] w-[116px] rounded-[4px] py-[7px] font-normal text-[15px] text-[#ffffff] text-center"
+                >
+                  Follow
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full lg:w-[790px] mt-[44px]"
+            >
+              <!-- Card -->
+              <div
+                class="bg-[#FFFFFF] p-4 rounded-[4px] flex flex-col justify-between min-h-[130px]"
+              >
+                <div class="flex space-x-[18px]">
+                  <div class="flex flex-col w-[179px]">
+                    <h2 class="text-[17px] font-medium text-[#072D4B] mb-[9px]">
+                      Battlegrounds Mobile India iOS release date
+                    </h2>
+                    <p
+                      class="text-[14px] font-normal text-[#6a8193] w-[179px] h-[60px] overflow-hidden text-ellipsis"
+                    >
+                      The reason behind their disappointment is that iPhone
+                      users have been...
+                    </p>
+                  </div>
+                  <figure class="aspect-[1/1] rounded-[4px] bg-gray-100">
+                    <!-- Image Placeholder -->
+                    <img
+                      src="./assets/images/hacker.png"
+                      alt="Battlegrounds Mobile India"
+                      class="size-full object-cover rounded-[4px]"
+                    />
+                  </figure>
+                </div>
+
+                <div class="flex justify-between items-center mt-4">
+                  <p class="font-normal text-[12px] text-[#9cabb7]">
+                    Sport Biz
+                  </p>
+                  <div class="flex items-center space-x-[8px]">
+                    <div class="size-[3px] rounded-full bg-[#acd9fc]"></div>
+                    <p class="font-normal text-[12px] text-[#9cabb7]">
+                      42 mins ago
+                    </p>
+                  </div>
+
+                  <div class="flex space-x-[8px] items-center">
+                    <figure class="size-[16px]">
+                      <img
+                        src="./assets/images/share.svg"
+                        class="object-cover"
+                      />
+                    </figure>
+                    <p class="font-normal text-[12px] text-[#0768b5]">Share</p>
+                  </div>
+                  <div class="flex space-x-[8px] items-center">
+                    <figure class="size-[16px]">
+                      <img
+                        src="./assets/images/pocket.svg"
+                        class="object-cover"
+                      />
+                    </figure>
+                    <p class="font-normal text-[12px] text-[#0768b5]">
+                      Read Later
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Card -->
+              <div
+                class="bg-[#FFFFFF] p-4 rounded-[4px] flex flex-col justify-between min-h-[130px]"
+              >
+                <div class="flex space-x-[18px]">
+                  <div class="flex flex-col w-[179px]">
+                    <h2 class="text-[17px] font-medium text-[#072D4B] mb-[9px]">
+                      Battlegrounds Mobile India iOS release date
+                    </h2>
+                    <p
+                      class="text-[14px] font-normal text-[#6a8193] w-[179px] h-[60px] overflow-hidden text-ellipsis"
+                    >
+                      The reason behind their disappointment is that iPhone
+                      users have been...
+                    </p>
+                  </div>
+                  <figure class="aspect-[1/1] rounded-[4px] bg-gray-100">
+                    <!-- Image Placeholder -->
+                    <img
+                      src="./assets/images/hacker.png"
+                      alt="Battlegrounds Mobile India"
+                      class="size-full object-cover rounded-[4px]"
+                    />
+                  </figure>
+                </div>
+
+                <div class="flex justify-between items-center mt-4">
+                  <p class="font-normal text-[12px] text-[#9cabb7]">
+                    Sport Biz
+                  </p>
+                  <div class="flex items-center space-x-[8px]">
+                    <div class="size-[3px] rounded-full bg-[#acd9fc]"></div>
+                    <p class="font-normal text-[12px] text-[#9cabb7]">
+                      42 mins ago
+                    </p>
+                  </div>
+
+                  <div class="flex space-x-[8px] items-center">
+                    <figure class="size-[16px]">
+                      <img
+                        src="./assets/images/share.svg"
+                        class="object-cover"
+                      />
+                    </figure>
+                    <p class="font-normal text-[12px] text-[#0768b5]">Share</p>
+                  </div>
+                  <div class="flex space-x-[8px] items-center">
+                    <figure class="size-[16px]">
+                      <img
+                        src="./assets/images/pocket.svg"
+                        class="object-cover"
+                      />
+                    </figure>
+                    <p class="font-normal text-[12px] text-[#0768b5]">
+                      Read Later
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card -->
+              <div
+                class="bg-[#FFFFFF] p-4 rounded-[4px] flex flex-col justify-between min-h-[130px]"
+              >
+                <div class="flex flex-col w-[330px]">
+                  <h2 class="text-[17px] font-medium text-[#072D4B] mb-[9px]">
+                    Petrol, diesel prices - July 6: Fuel prices unchanged after
+                    touching record high
+                  </h2>
+                  <p
+                    class="text-[14px] font-normal text-[#6a8193] w-[330px] h-[60px] overflow-hidden text-ellipsis"
+                  >
+                    When US President Joe Biden chose in April to withdraw all
+                    American forces from Afghanistan by September, we were among
+                    those who judged..
+                  </p>
+                </div>
+
+                <div class="flex justify-between items-center mt-4">
+                  <p class="font-normal text-[12px] text-[#9cabb7]">
+                    Sport Biz
+                  </p>
+                  <div class="flex items-center space-x-[8px]">
+                    <div class="size-[3px] rounded-full bg-[#acd9fc]"></div>
+                    <p class="font-normal text-[12px] text-[#9cabb7]">
+                      42 mins ago
+                    </p>
+                  </div>
+
+                  <div class="flex space-x-[8px] items-center">
+                    <figure class="size-[16px]">
+                      <img
+                        src="./assets/images/share.svg"
+                        class="object-cover"
+                      />
+                    </figure>
+                    <p class="font-normal text-[12px] text-[#0768b5]">Share</p>
+                  </div>
+                  <div class="flex space-x-[8px] items-center">
+                    <figure class="size-[16px]">
+                      <img
+                        src="./assets/images/pocket.svg"
+                        class="object-cover"
+                      />
+                    </figure>
+                    <p class="font-normal text-[12px] text-[#0768b5]">
+                      Read Later
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Card -->
+              <div
+                class="bg-[#FFFFFF] p-4 rounded-[4px] flex flex-col justify-between min-h-[130px]"
+              >
+                <div class="flex space-x-[18px]">
+                  <div class="flex flex-col w-[179px]">
+                    <h2 class="text-[17px] font-medium text-[#072D4B] mb-[9px]">
+                      Battlegrounds Mobile India iOS release date
+                    </h2>
+                    <p
+                      class="text-[14px] font-normal text-[#6a8193] w-[179px] h-[60px] overflow-hidden text-ellipsis"
+                    >
+                      The reason behind their disappointment is that iPhone
+                      users have been...
+                    </p>
+                  </div>
+                  <figure class="aspect-[1/1] rounded-[4px] bg-gray-100">
+                    <!-- Image Placeholder -->
+                    <img
+                      src="./assets/images/hacker.png"
+                      alt="Battlegrounds Mobile India"
+                      class="size-full object-cover rounded-[4px]"
+                    />
+                  </figure>
+                </div>
+
+                <div class="flex justify-between items-center mt-4">
+                  <p class="font-normal text-[12px] text-[#9cabb7]">
+                    Sport Biz
+                  </p>
+                  <div class="flex items-center space-x-[8px]">
+                    <div class="size-[3px] rounded-full bg-[#acd9fc]"></div>
+                    <p class="font-normal text-[12px] text-[#9cabb7]">
+                      42 mins ago
+                    </p>
+                  </div>
+
+                  <div class="flex space-x-[8px] items-center">
+                    <figure class="size-[16px]">
+                      <img
+                        src="./assets/images/share.svg"
+                        class="object-cover"
+                      />
+                    </figure>
+                    <p class="font-normal text-[12px] text-[#0768b5]">Share</p>
+                  </div>
+                  <div class="flex space-x-[8px] items-center">
+                    <figure class="size-[16px]">
+                      <img
+                        src="./assets/images/pocket.svg"
+                        class="object-cover"
+                      />
+                    </figure>
+                    <p class="font-normal text-[12px] text-[#0768b5]">
+                      Read Later
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="mt-[44px] flex justify-center w-[118px] border border-[#072d4b] rounded-[4px] mx-auto mb-[38px]"
+            >
+              <button class="font-normal text-[15px] text-[#072D4B] py-[10px]">
+                Show More
+              </button>
+            </div>
+
+            <footer
+              class="border-t border-[#7d93A1] flex justify-between py-[23px]"
+            >
+              <p class="text-[#95a7B3] font-normal text-[12px]">
+                © Aster News, 2022
+              </p>
+              <div class="flex space-x-[38px]">
+                <p class="text-[#95a7B3] font-normal text-[12px]">
+                  Privacy Policy
+                </p>
+                <p class="text-[#95a7B3] font-normal text-[12px]">
+                  Terms of Service
+                </p>
+              </div>
+            </footer>
+          </div>
+        </div>
+
+        <div class="w-[290px] flex flex-col">
+          <div
+            class="w-full h-[168px] p-[14px] flex flex-col bg-[#ffffff] rounded-[4px]"
+          >
+            <div
+              class="pb-[9px] flex items-center justify-between border-b border-[#6A8193]"
+            >
+              <p class="font-normal text-[15px] text-[#072D4B]">
+                Coimbatore, Tamil Nadu
+              </p>
+              <figure class="size-[18px]">
+                <img src="./assets/images/crosshair.svg" class="object-cover" />
+              </figure>
+            </div>
+            <div class="flex justify-between pt-[15px]">
+              <div>
+                <p class="font-normal text-[15px] text-[#072D4B] mb-[7px]">
+                  Sunny
+                </p>
+                <p class="font-bold text-[26px] text-[#072D4B] mb-[12px]">
+                  31 c
+                </p>
+                <div class="flex space-x-[23px]">
+                  <p class="font-weight text-[12px] text-[#072D4B]">Celsius</p>
+                  <p class="font-normal text-[12px] text-[#b5b1ca]">
+                    Fahrenheit
+                  </p>
+                </div>
+              </div>
+              <figure class="size-[52px]">
+                <img src="./assets/images/sun.svg" class="object-cover" />
+              </figure>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[100px] flex flex-col mt-[15px] bg-[#ffffff] py-[13px] px-[15px]"
+          >
+            <div class="mb-[12px] flex items-center space-x-[12px]">
+              <figure class="size-[18px]">
+                <img src="./assets/images/feather.svg" class="object-cover" />
+              </figure>
+              <p class="font-normal text-[15px] text-[#072D4B]">
+                Become a Story Writer
+              </p>
+            </div>
+            <div class="flex">
+              <p class="font-normal text-[12px] text-[#6a8193]">
+                Contribute stories and start earning.
+              </p>
+              <button
+                class="font-normal text-[15px] text-[#2F9FF8] border py-[10px] border-[#2f9ff8] text-center w-[110px] rounded-[4px]"
+              >
+                Know More
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[351px] flex flex-col mt-[15px] bg-[#ffffff] py-[13px] px-[15px]"
+          >
+            <div class="flex justify-between border-b border-[#6a8193]">
+              <div class="mb-[12px] flex items-center space-x-[12px]">
+                <figure class="size-[18px]">
+                  <img src="./assets/images/feather.svg" class="object-cover" />
+                </figure>
+                <p class="font-normal text-[15px] text-[#072D4B]">
+                  Quick Bytes
+                </p>
+              </div>
+
+              <div class="flex space-x-[10px]">
+                <div
+                  class="flex justify-center items-center bg-[#2F9FF8] w-[23px] h-[23px] opacity-80 rounded-full"
+                >
+                  <figure class="w-[8px] h-[8px]">
+                    <img
+                      src="./assets/images/left.svg"
+                      class="w-full h-full object-cover"
+                      alt="Left Arrow"
+                    />
+                  </figure>
+                </div>
+                <div
+                  class="flex justify-center items-center bg-[#2F9FF8] w-[23px] h-[23px] rounded-full"
+                >
+                  <figure class="w-[10px] h-[10px]">
+                    <img
+                      src="./assets/images/right.svg"
+                      class="w-full h-full object-cover"
+                      alt="Right Arrow"
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="w-[241px] pt-[13px] h-[268px] font-normal text-[12px] text-[#618193]"
+            >
+              <p>
+                The price of petrol remained unchanged on July 6 after reaching
+                a new record high on the previous day, according to a price
+                notification by state-owned fuel retailers. The diesel price
+                remained stable for the second consecutive day.<br />
+                <br />
+                The increase on July 5, 35th in two months, took the petrol
+                price in Delhi closer to Rs 100 per litre-mark. The petrol price
+                in the national capital soared to Rs 99.9 a litre and diesel was
+                priced at Rs 89.4 per litre, according to Bharat Petroleum's
+                price listing.
+              </p>
+            </div>
+          </div>
+
+          <div class="w-full h-[164px] p-[20px] bg-[#ffffff] mt-[15px]">
+            <p class="font-normal text-[15px] text-[#072D4B] mb-[12px]">
+              Subscribe to our newsletter
+            </p>
+            <input
+              type="email"
+              placeholder="Enter Email"
+              class="pl-[14px] h-[38px] rounded-[4px] bg-[#f4f9f8] font-normal text-[15px] border border-[#072D4B] mb-[16px] w-full"
+            />
+            <button
+              class="py-[10px] w-full rounded-[4px] bg-[#2F9FF8] font-normal text-[15px] text-[#ffffff] text-center"
+            >
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
