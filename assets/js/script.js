@@ -2,6 +2,7 @@ const categoriesContainer = document.querySelector("#categoriesContainer");
 const newsContainer = document.querySelector("#newsContainer");
 const showMoreBtn = document.querySelector("#showMore");
 let page = 1;
+let currentCategory = '';
 
 // Function for fetching categories
 async function getCategories() {
@@ -17,13 +18,27 @@ function createCategories(data) {
   categoriesContainer.innerHTML = "";
   data.forEach((item) => {
     categoriesContainer.innerHTML += `
-        <li class="flex items-center space-x-5 mb-6 pl-8">
-          <div class="w-6 h-6">
-            <img class="object-cover" src="./assets/images/${item.slug}.svg" alt="Globe" />
-          </div>
-          <a href="#" class="font-normal text-[15px] text-[#072D4B]">${item.name}</a>
-        </li>`;
+      <li class="flex items-center space-x-5 mb-6 pl-8" data-slug="${item.slug}" ">
+        <div class="w-6 h-6">
+          <img class="object-cover" src="./assets/images/${item.slug}.svg" alt="${item.name}" />
+        </div>
+        <a href="#" class="font-normal text-[15px] text-[#072D4B]">${item.name}</a>
+      </li>`;
   });
+
+  // Add event listeners after the category elements are created
+  document.querySelectorAll("#categoriesContainer li").forEach((element) => {
+    element.addEventListener("click", handleClickCategory);
+  });
+}
+
+// Function to handle category click
+function handleClickCategory(e) {
+  e.preventDefault();
+  currentCategory = this.getAttribute('data-slug');
+  page = 1;
+  newsContainer.innerHTML = "";
+  fetchNews();
 }
 
 function formatDate(dateString) {
@@ -33,9 +48,10 @@ function formatDate(dateString) {
 
 // Function for fetching news
 async function fetchNews() {
-  const res = await fetch(`https://all-api.bitcode.az/api/news?page=${page}`);
+  const categoryFilter = currentCategory ? `&category=${currentCategory}` : '';
+  const res = await fetch(`https://all-api.bitcode.az/api/news?page=${page}${categoryFilter}`);
   const data = await res.json();
-  createNews(data.data); 
+  createNews(data.data);
   console.log(data.data);
 }
 fetchNews();
@@ -44,26 +60,18 @@ fetchNews();
 function createNews(data) {
   data.forEach((news) => {
     newsContainer.innerHTML += `
-      <div
-        class="bg-[#FFFFFF] p-4 rounded-[4px] flex flex-col justify-between min-h-[130px]"
-      >
+      <div class="bg-[#FFFFFF] p-4 rounded-[4px] flex flex-col justify-between min-h-[130px]">
         <div class="flex space-x-[18px]">
           <div class="flex flex-col w-[179px]">
             <h2 class="text-[17px] font-medium text-[#072D4B] mb-[9px]">
               ${news.title}
             </h2>
-            <p
-              class="text-[14px] font-normal text-[#6a8193] w-[179px] h-[60px] overflow-hidden text-ellipsis"
-            >
+            <p class="text-[14px] font-normal text-[#6a8193] w-[179px] h-[60px] overflow-hidden text-ellipsis">
               ${news.description}
             </p>
           </div>
           <figure class="aspect-[1/1] rounded-[4px] bg-gray-100">
-            <img
-              src=${news.photo}
-              alt="Battlegrounds Mobile India"
-              class="size-full object-cover rounded-[4px]"
-            />
+            <img src=${news.photo} alt="${news.title}" class="size-full object-cover rounded-[4px]" />
           </figure>
         </div>
 
@@ -80,10 +88,7 @@ function createNews(data) {
           </div>
           <div class="flex space-x-[8px] items-center">
             <figure class="size-[16px]">
-              <img
-                src="./assets/images/pocket.svg"
-                class="object-cover"
-              />
+              <img src="./assets/images/pocket.svg" class="object-cover" />
             </figure>
             <p class="font-normal text-[12px] text-[#0768b5]">
               Read Later
